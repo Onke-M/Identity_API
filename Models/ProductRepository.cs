@@ -21,8 +21,21 @@ namespace Assignment3_API.Models
 
         public async Task<Product[]> GetAllProductsAsync()
         {
-            IQueryable<Product> query = _appDbContext.Products;
-            return await query.ToArrayAsync();
+            IQueryable<Product> product = _appDbContext.Products.Select(p => new Product
+            {
+                ProductId = p.ProductId,
+                Name = p.Name,
+                Price = p.Price,
+                Description = p.Description,
+                Brand = p.Brand,
+                ProductType = p.ProductType,
+                IsActive = p.IsActive,
+                IsDeleted = p.IsDeleted,
+                DateCreated = p.DateCreated,
+                DateModified = p.DateModified
+            }).Take(10);
+                
+            return await product.ToArrayAsync();
         }
 
         public async Task<ProductType[]> GetAllProductTypesAsync()
