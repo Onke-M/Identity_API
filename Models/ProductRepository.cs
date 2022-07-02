@@ -33,7 +33,7 @@ namespace Assignment3_API.Models
                 IsDeleted = p.IsDeleted,
                 DateCreated = p.DateCreated,
                 DateModified = p.DateModified
-            }).Take(10);
+            }).Take(15);
                 
             return await product.ToArrayAsync();
         }
