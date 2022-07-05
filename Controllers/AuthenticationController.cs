@@ -37,8 +37,8 @@ namespace Assignment3_API.Controllers
 
         protected void sendEmail(string otp, string userEmail)
         {
-            var username = "onkemweza1@gmail.com";
-            var password = "bnnchmmtpkhnjevt";
+            var username = "**********";
+            var password = "**********";
             using SmtpClient email = new SmtpClient
             {
                 DeliveryMethod = SmtpDeliveryMethod.Network,
